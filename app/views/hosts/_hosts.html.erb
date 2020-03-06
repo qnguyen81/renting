@@ -1,0 +1,14 @@
+<div class ="column">
+<div class="card">
+<% if @hosts.empty? %>
+  <p>There are no listings available.</p>
+<% else %>
+  <% @hosts.each do |host| %>
+  <div class="card-content">
+    <h2 class="title"><%=link_to host.name,host %></h2>
+    </div>
+  <% end %>
+<% end %>
+
+</div>
+</div>
