@@ -1,17 +1,17 @@
- <h3 class="title is-4">Hosts</h3>
+ <h3 class="title is-4">Listings</h3>
  <div class="columns is-mobile is-centered">
 <div class="column is-half">
  <table>
       <thead>
         <tr>
-          <th><%= paginate @hosts %> </br ></th>
+          <th><%= paginate @listings %> </br ></th>
         </tr>
 
       </thead>
       <tbody>
-        <% @hosts.each do |host| %>
+        <% @listings.each do |listing| %>
           <tr>
-            <td><%= link_to host.name,host%></td>
+            <td><%= link_to listing.name,listing%></td>
 
           </tr>
         <% end %>

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ListingsController < ApplicationController
-  # def _listing
-  #   @listings = Listing.all
-  # end
+  def index
+    @listings = Listing.all.page(params[:page]).per(35)
+  end
 
   def show
     @listing = Listing.find(params[:id])

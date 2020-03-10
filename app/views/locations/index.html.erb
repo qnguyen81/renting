@@ -3,16 +3,15 @@
 <div class="column is-half">
  <table>
       <thead>
-        <tr>
-          <th><%= paginate @hosts %> </br ></th>
-        </tr>
-
       </thead>
       <tbody>
-        <% @hosts.each do |host| %>
+        <% @locations.each do |location| %>
           <tr>
-            <td><%= link_to host.name,host%></td>
+            <td><%= link_to location.area,location%></td>
+            <td><%= link_to location.listing.name,@listing%></td>
 
+          </tr>
+          <tr>
           </tr>
         <% end %>
       </tbody>
