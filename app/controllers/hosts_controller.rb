@@ -2,10 +2,11 @@
 
 class HostsController < ApplicationController
   def index
-    @hosts = Host.all
+    @hosts = Host.all.page(params[:page]).per(35)
   end
 
   def show
-    @host = Host.find(params[:name])
+    @host = Host.find(params[:id])
+    @test = Host.where(name: 'john')
   end
 end

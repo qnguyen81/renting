@@ -1,18 +1,20 @@
-<div class ="column">
-<div class="card">
-<% if @hosts.empty? %>
-  <p>There are no listings available.</p>
-<% else %>
-  <% @hosts.each do |host| %>
-  <div class="card-content">
-    <h2 class="title"><%=link_to host.name,host %></h2>
-        <p>
-      There are <%= host.number_of_listings %>
-      listings of this host.
-    </p>
-    </div>
-  <% end %>
-<% end %>
+ <h3 class="title is-4">Hosts</h3>
+ <div class="columns is-mobile is-centered">
+<div class="column is-half">
+ <table>
+      <thead>
+        <tr>
+          <th><%= paginate @hosts %> </br ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @hosts.each do |host| %>
+          <tr>
+            <td><%= link_to host.name,host%></td>
 
-</div>
-</div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+    </div>

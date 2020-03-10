@@ -7,16 +7,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'csv'
+# require 'csv'
 
+# # Host.destroy_all
+# Location.destroy_all
+# Listing.destroy_all
 # Host.destroy_all
-Location.destroy_all
-Listing.destroy_all
-Host.destroy_all
 
-csv_text = File.read("#{Rails.root}/public/new-york-city-airbnb-open-data/AB_NYC_2019.csv")
-csv = CSV.parse(csv_text, headers: true)
-csv.each do |row|
+# csv_text = File.read("#{Rails.root}/public/new-york-city-airbnb-open-data/AB_NYC_2019.csv")
+# csv = CSV.parse(csv_text, headers: true)
+
+require 'smarter_csv/smarter_csv'
+
+data = SmarterCSV.process("#{Rails.root}/public/new-york-city-airbnb-open-data/AB_NYC_2019.csv")
+
+data.each do |row|
   host = Host.create(
     host_id: row['host_id'],
     name: row['host_name'],

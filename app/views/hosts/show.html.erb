@@ -1,7 +1,22 @@
-<h3 class="title is-4"><%= @breed.name %></h3>
+<h4 class="title is-4"> <%= @host.name %></h4>
 
-<h4 class="title is-4">Horses of this breed</h4>
+<div class ="column">
+<div class="card">
+  <div class="card-content">
+      <p>name: <%= @host.name %></p>
+          <p>
+        host_id: <%= @host.id%>
+    </p>
+              <p>
+        Number of listings: <%= @host.number_of_listings%>
+    </p>
+  </div>
 
-<div class="columns is-multiline">
-   <%= render @listing.name if include?('ash') %>
+  <footer class="card-footer">
+
+  <p class ="card-footer-item">
+    listings:<%= render @host.listings %>
+  </p>
+</footer>
+</div>
 </div>
