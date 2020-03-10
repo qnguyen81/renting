@@ -1,0 +1,12 @@
+<h3 class="title is-4"><%= @listing.name %></h3>
+
+<div class="columns is-multiline">
+    <%= @listing.name %>
+                 <p>
+        <ul>
+    <% @listing.locations.each do |location| %>
+      <li>Location:<%= location.area %></li>
+    <% end %>
+  </ul>
+    </p>
+</div>

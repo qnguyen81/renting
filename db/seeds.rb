@@ -10,8 +10,9 @@
 require 'csv'
 
 # Host.destroy_all
-# Listing.destroy_all
-# Host.destroy_all
+Location.destroy_all
+Listing.destroy_all
+Host.destroy_all
 
 csv_text = File.read("#{Rails.root}/public/new-york-city-airbnb-open-data/AB_NYC_2019.csv")
 csv = CSV.parse(csv_text, headers: true)
@@ -21,11 +22,19 @@ csv.each do |row|
     name: row['host_name'],
     number_of_listings: row['calculated_host_listings_count']
   )
-  host.listings.create(
+  listing = host.listings.create(
     listing_id: row['id'],
-    name: row['name']
+    name: row['name'],
+    price: row['price']
+  )
+
+  listing.locations.create(
+    longtitude: row['longtitude'],
+    latitude: row['latitude'],
+    area: row['neighbourhood']
   )
 end
 
 puts "Created #{Listing.count} listings."
 puts "Created #{Host.count} hosts."
+puts "Created #{Location.count} locations."
