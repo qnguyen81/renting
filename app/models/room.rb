@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class Room < ApplicationRecord
   belongs_to :listing
-
-  validates :type, presence: true
+  has_many :listings
 end

@@ -1,9 +1,2 @@
-<p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@location.latitude},#{@location.longtitude}&key=AIzaSyCAlF4KAUweuTecR2976dDy3XZtIrWo-p0", alt: "Map" %>
-</p>
-
-<div>
-  <p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@location.latitude},#{@location.longtitude}&key=AIzaSyCAlF4KAUweuTecR2976dDy3XZtIrWo-p0", alt: "Map" %>
-</p>
-</div>
+<iframe width="500" height="300" frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCAlF4KAUweuTecR2976dDy3XZtIrWo-p0&q=<%=@location.area%>" allowfullscreen>
