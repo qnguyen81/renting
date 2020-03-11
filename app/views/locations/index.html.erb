@@ -1,14 +1,12 @@
- <h3 class="title is-4">Hosts</h3>
- <div class="columns is-mobile is-centered">
-<div class="column is-half">
+
  <table>
       <thead>
       </thead>
       <tbody>
         <% @locations.each do |location| %>
           <tr>
-            <td><%= link_to location.area,location%></td>
-            <td><%= link_to location.listing.name,@listing%></td>
+            <td></td>
+            <td></td>
 
           </tr>
           <tr>
@@ -18,3 +16,17 @@
     </table>
     </div>
     </div>
+
+      <h3 class="title is-4">Hosts</h3>
+      <div class="columns is-mobile is-centered">
+      <div class="column is-half">
+          <div class="columns">
+        <div class="column">
+         <%= link_to location.area,location%>
+        </div>
+        <div class="column">
+          <%= link_to location.listing.name,location.listing%>
+        </div>
+      </div>
+      </div>
+      </div>

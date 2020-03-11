@@ -8,7 +8,7 @@
         host_id: <%= @host.id%>
     </p>
               <p>
-        Number of listings: <%= @host.number_of_listings%>
+        Number of listings: <%= @host.listings.count%>
     </p>
   </div>
 
@@ -17,6 +17,18 @@
   <p class ="card-footer-item">
     listings:<%= render @host.listings %>
   </p>
+
 </footer>
 </div>
+  <% if @host.id > 1%>
+  <%= link_to "previous" , host_path(@host.id-1) %>
+  <% else %>
+    <button>previous</button>
+  <% end %>
+
+    <% if @host.id < Host.count %>
+  <%= link_to "next" , host_path(@host.id+1) %>
+  <% else %>
+    <button>next</button>
+  <% end %>
 </div>

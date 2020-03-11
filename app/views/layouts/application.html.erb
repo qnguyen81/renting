@@ -14,7 +14,7 @@
   <body>
    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+          <a class="navbar-item" href="/search">
            Room Listing
           </a>
         </div>
@@ -28,6 +28,21 @@
           </a>
           <a class="navbar-item" href="/hosts">
            Owner
+          </a>
+           <a class="navbar-item" href="/search">
+           Search
+          </a>
+
+          <a>
+                <%= form_tag(search_page_path, :method => "get",
+    class: 'navbar-form navbar-left') do %>
+  <div class="field">
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "input is-primary" %>
+<a>
+      <%= button_tag "Search", :class => 'button',:name => nil%>
+      </a>
+  </div>
+<% end %>
           </a>
         </div>
       </nav>

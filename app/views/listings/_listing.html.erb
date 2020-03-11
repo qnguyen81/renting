@@ -16,4 +16,15 @@
 </p>
 </footer>
 </div>
+  <% if listing.id > 1%>
+  <%= link_to "previous" , listing_path(listing.id-1) %>
+  <% else %>
+    <button>previous</button>
+  <% end %>
+
+    <% if listing.id < Listing.count %>
+  <%= link_to "next" , listing_path(listing.id+1) %>
+  <% else %>
+    <button>next</button>
+  <% end %>
 </div>

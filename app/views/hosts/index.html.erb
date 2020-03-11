@@ -11,10 +11,14 @@
       <tbody>
         <% @hosts.each do |host| %>
           <tr>
-            <td><%= link_to host.name,host%></td>
-
+                  <div class="card">
+            <div class="card-content">
+            <%= link_to host.name,host if host.listings.count>0%>
+                    </div>
+        </div>
           </tr>
         <% end %>
+
       </tbody>
     </table>
     </div>

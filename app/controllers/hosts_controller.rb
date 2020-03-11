@@ -7,6 +7,5 @@ class HostsController < ApplicationController
 
   def show
     @host = Host.find(params[:id])
-    @test = Host.where(name: 'john')
   end
 end

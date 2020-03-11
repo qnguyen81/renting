@@ -6,13 +6,8 @@ Rails.application.routes.draw do
   resources :hosts, shallow: true
   resources :listings, shallow: true
   resources :locations, shallow: true
+  get '/search' => 'welcome#search', as: 'search_page'
 
-  resources :hosts do
-    resources :listings
-  end
-
-  get '/hosts/:id/:name' => 'hosts#show', as: 'test'
-  get '/search' => 'listings#_listing', :as => 'test1'
   get '/hosts' => 'hosts#index'
   get '/listings' => 'listings#_listing'
 end
