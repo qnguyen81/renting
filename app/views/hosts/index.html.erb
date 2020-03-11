@@ -1,25 +1,16 @@
- <h3 class="title is-4">Hosts</h3>
- <div class="columns is-mobile is-centered">
-<div class="column is-half">
- <table>
-      <thead>
-        <tr>
-          <th><%= paginate @hosts %> </br ></th>
-        </tr>
-
-      </thead>
-      <tbody>
-        <% @hosts.each do |host| %>
-          <tr>
-                  <div class="card">
-            <div class="card-content">
-            <%= link_to host.name,host if host.listings.count>0%>
-                    </div>
+<div class="columns is-mobile is-centered">
+      <div class="column is-half">
+      <h3 class="title is-4">Hosts</h3>
+      <%= paginate @hosts %> </br >
+       <% @hosts.each do |host| %>
+          <div class="columns">
+        <div class="column">
+         <%= link_to host.name,host if host.listings.count>0%>
         </div>
-          </tr>
-        <% end %>
-
-      </tbody>
-    </table>
-    </div>
-    </div>
+        <div class="column">
+         <%=host.listings.count%> listing(s)
+        </div>
+      </div>
+      <% end %>
+      </div>
+      </div>

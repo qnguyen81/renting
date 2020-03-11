@@ -25,18 +25,19 @@ csv.each do |row|
     number_of_listings: row['calculated_host_listings_count']
   )
 
-    listing = host.listings.create(
-      listing_id: row['id'],
-      name: row['name'],
-      price: row['price']
-    )
+  listing = host.listings.create(
+    listing_id: row['id'],
+    name: row['name'],
+    price: row['price']
+  )
 
-    listing.locations.create(
-      longtitude: row['longtitude'],
-      latitude: row['latitude'],
-      area: row['neighbourhood']
-    )
+  listing.create
 
+  listing.locations.create(
+    longtitude: row['longtitude'],
+    latitude: row['latitude'],
+    area: row['neighbourhood']
+  )
 end
 
 puts "Created #{Listing.count} listings."

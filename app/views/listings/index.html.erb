@@ -1,21 +1,15 @@
- <h3 class="title is-4">Listings</h3>
- <div class="columns is-mobile is-centered">
-<div class="column is-half">
- <table>
-      <thead>
-        <tr>
-          <th><%= paginate @listings %> </br ></th>
-        </tr>
-
-      </thead>
-      <tbody>
-        <% @listings.each do |listing| %>
-          <tr>
-            <td><%= link_to listing.name,listing%></td>
-
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    </div>
-    </div>
+<div class="columns is-mobile is-centered">
+      <div class="column is-half">
+      <h3 class="title is-4">Listings</h3>
+       <% @listings.each do |listing| %>
+          <div class="columns">
+        <div class="column">
+         <%= link_to listing.name,listing%>
+        </div>
+        <div class="column">
+         $ <%= link_to listing.price%>
+        </div>
+      </div>
+      <% end %>
+      </div>
+      </div>

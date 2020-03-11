@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_034000) do
+ActiveRecord::Schema.define(version: 2020_03_11_060553) do
 
   create_table "hosts", force: :cascade do |t|
     t.integer "host_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2020_03_09_034000) do
     t.index ["listing_id"], name: "index_locations_on_listing_id"
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.string "room_type"
+    t.integer "minimum_night"
+    t.integer "listing_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_rooms_on_listing_id"
+  end
+
   add_foreign_key "listings", "hosts"
   add_foreign_key "locations", "listings"
+  add_foreign_key "rooms", "listings"
 end

@@ -1,25 +1,7 @@
-
- <table>
-      <thead>
-      </thead>
-      <tbody>
-        <% @locations.each do |location| %>
-          <tr>
-            <td></td>
-            <td></td>
-
-          </tr>
-          <tr>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    </div>
-    </div>
-
-      <h3 class="title is-4">Hosts</h3>
       <div class="columns is-mobile is-centered">
       <div class="column is-half">
+      <h3 class="title is-4">Locations</h3>
+       <% @locations.each do |location| %>
           <div class="columns">
         <div class="column">
          <%= link_to location.area,location%>
@@ -28,5 +10,6 @@
           <%= link_to location.listing.name,location.listing%>
         </div>
       </div>
+      <% end %>
       </div>
       </div>
