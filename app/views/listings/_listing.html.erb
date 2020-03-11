@@ -3,15 +3,11 @@
   <div class="card-content">
       <p> <%= link_to listing.name, listing %></p>
   </div>
-
   <footer class="card-footer">
     <p class ="card-footer-item">
         host_id: <%= listing.id%>
   <p class ="card-footer-item">
     Host name: <%=link_to listing.host.name,listing.host%>
-  </p>
-    <p class ="card-footer-item">
-    Locations <%=isting.rooms.room_type%>
   </p>
 </footer>
 </div>

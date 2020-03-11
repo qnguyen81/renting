@@ -1,0 +1,15 @@
+      <div class="columns is-mobile is-centered">
+      <div class="column is-half">
+      <h3 class="title is-4">Rooms</h3>
+       <% @rooms.each do |room| %>
+          <div class="columns">
+        <div class="column">
+         <%= room.room_type%>
+        </div>
+        <div class="column">
+          <%= room.minimum_night%>
+        </div>
+      </div>
+      <% end %>
+      </div>
+      </div>
