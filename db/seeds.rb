@@ -24,14 +24,11 @@ csv.each do |row|
     name: row['host_name'],
     number_of_listings: row['calculated_host_listings_count']
   )
-
-  listing = host.listings.create(
-    listing_id: row['id'],
-    name: row['name'],
-    price: row['price']
-  )
-
-  listing.create
+             .listing = host.listings.create(
+               listing_id: row['id'],
+               name: row['name'],
+               price: row['price']
+             )
 
   listing.locations.create(
     longtitude: row['longtitude'],
